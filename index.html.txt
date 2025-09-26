@@ -1,0 +1,1091 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Domino Construction - Renovation Experts in Toronto & GTA</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    :root {
+      --primary: #1d3557;
+      --secondary: #457b9d;
+      --accent: #e63946;
+      --light: #f1faee;
+      --dark: #333;
+      --gray: #6c757d;
+    }
+    
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      line-height: 1.6;
+      color: var(--dark);
+      background-color: #f9f9f9;
+    }
+    
+    .container {
+      width: 100%;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+    
+    /* Header Styles */
+    header {
+      background: linear-gradient(rgba(29, 53, 87, 0.9), rgba(29, 53, 87, 0.9)), url('https://images.unsplash.com/photo-1504307651254-35680f356dfd?ixlib=rb-4.0.3&auto=format&fit=crop&w=1950&q=80');
+      background-size: cover;
+      background-position: center;
+      color: var(--light);
+      padding: 100px 0;
+      text-align: center;
+    }
+    
+    header h1 {
+      font-size: 3.5rem;
+      margin-bottom: 10px;
+      text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+    }
+    
+    header p {
+      font-size: 1.5rem;
+      margin-bottom: 30px;
+      max-width: 800px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    
+    .btn {
+      display: inline-block;
+      background: var(--accent);
+      color: white;
+      padding: 12px 30px;
+      border-radius: 5px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: all 0.3s ease;
+      border: none;
+      cursor: pointer;
+    }
+    
+    .btn:hover {
+      background: #c1121f;
+      transform: translateY(-2px);
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    }
+    
+    /* Navigation */
+    nav {
+      background-color: var(--primary);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    }
+    
+    .nav-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 20px;
+    }
+    
+    .logo {
+      color: var(--light);
+      font-size: 1.8rem;
+      font-weight: bold;
+      text-decoration: none;
+    }
+    
+    .logo span {
+      color: var(--accent);
+    }
+    
+    .nav-links {
+      display: flex;
+      list-style: none;
+    }
+    
+    .nav-links li {
+      margin-left: 25px;
+    }
+    
+    .nav-links a {
+      color: var(--light);
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.3s ease;
+    }
+    
+    .nav-links a:hover {
+      color: var(--accent);
+    }
+    
+    .menu-toggle {
+      display: none;
+      background: none;
+      border: none;
+      color: var(--light);
+      font-size: 1.5rem;
+      cursor: pointer;
+    }
+    
+    /* Sections */
+    section {
+      padding: 80px 0;
+    }
+    
+    .section-title {
+      text-align: center;
+      margin-bottom: 50px;
+      color: var(--primary);
+    }
+    
+    .section-title h2 {
+      font-size: 2.5rem;
+      margin-bottom: 15px;
+      position: relative;
+      display: inline-block;
+    }
+    
+    .section-title h2::after {
+      content: '';
+      position: absolute;
+      bottom: -10px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 80px;
+      height: 4px;
+      background: var(--accent);
+    }
+    
+    /* About Section */
+    .about-content {
+      display: flex;
+      align-items: center;
+      gap: 40px;
+    }
+    
+    .about-text {
+      flex: 1;
+    }
+    
+    .about-image {
+      flex: 1;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    }
+    
+    .about-image img {
+      width: 100%;
+      height: auto;
+      display: block;
+      transition: transform 0.5s ease;
+    }
+    
+    .about-image:hover img {
+      transform: scale(1.05);
+    }
+    
+    /* Services Section */
+    .services {
+      background-color: var(--light);
+    }
+    
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 30px;
+    }
+    
+    .service-card {
+      background: white;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    
+    .service-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+    }
+    
+    .service-icon {
+      background: var(--primary);
+      color: white;
+      font-size: 2.5rem;
+      padding: 20px;
+      text-align: center;
+    }
+    
+    .service-content {
+      padding: 25px;
+    }
+    
+    .service-content h3 {
+      margin-bottom: 15px;
+      color: var(--primary);
+    }
+    
+    /* Why Choose Us Section */
+    .features {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 30px;
+    }
+    
+    .feature {
+      text-align: center;
+      padding: 30px 20px;
+      background: white;
+      border-radius: 10px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+      transition: transform 0.3s ease;
+    }
+    
+    .feature:hover {
+      transform: translateY(-5px);
+    }
+    
+    .feature i {
+      font-size: 3rem;
+      color: var(--accent);
+      margin-bottom: 20px;
+    }
+    
+    .feature h3 {
+      margin-bottom: 15px;
+      color: var(--primary);
+    }
+    
+    /* Projects Section */
+    .projects {
+      background-color: var(--light);
+    }
+    
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 30px;
+    }
+    
+    .project-card {
+      position: relative;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+      height: 250px;
+    }
+    
+    .project-card img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.5s ease;
+    }
+    
+    .project-card:hover img {
+      transform: scale(1.1);
+    }
+    
+    .project-overlay {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: rgba(29, 53, 87, 0.8);
+      color: white;
+      padding: 20px;
+      transform: translateY(100%);
+      transition: transform 0.3s ease;
+    }
+    
+    .project-card:hover .project-overlay {
+      transform: translateY(0);
+    }
+    
+    /* Contact Section */
+    .contact-content {
+      display: flex;
+      gap: 40px;
+    }
+    
+    .contact-info {
+      flex: 1;
+    }
+    
+    .contact-info h3 {
+      margin-bottom: 20px;
+      color: var(--primary);
+    }
+    
+    .contact-details {
+      margin-bottom: 30px;
+    }
+    
+    .contact-item {
+      display: flex;
+      align-items: center;
+      margin-bottom: 15px;
+    }
+    
+    .contact-item i {
+      width: 40px;
+      height: 40px;
+      background: var(--primary);
+      color: white;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-right: 15px;
+    }
+    
+    .contact-form {
+      flex: 1;
+    }
+    
+    .form-group {
+      margin-bottom: 20px;
+    }
+    
+    .form-group label {
+      display: block;
+      margin-bottom: 5px;
+      font-weight: 500;
+    }
+    
+    .form-control {
+      width: 100%;
+      padding: 12px 15px;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      font-family: inherit;
+      font-size: 1rem;
+    }
+    
+    textarea.form-control {
+      min-height: 150px;
+      resize: vertical;
+    }
+    
+    /* Footer */
+    footer {
+      background: var(--primary);
+      color: var(--light);
+      padding: 60px 0 30px;
+    }
+    
+    .footer-content {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 40px;
+      margin-bottom: 40px;
+    }
+    
+    .footer-column h3 {
+      margin-bottom: 20px;
+      font-size: 1.3rem;
+      position: relative;
+      padding-bottom: 10px;
+    }
+    
+    .footer-column h3::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 50px;
+      height: 3px;
+      background: var(--accent);
+    }
+    
+    .footer-links {
+      list-style: none;
+    }
+    
+    .footer-links li {
+      margin-bottom: 10px;
+    }
+    
+    .footer-links a {
+      color: #ccc;
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+    
+    .footer-links a:hover {
+      color: var(--accent);
+    }
+    
+    .social-links {
+      display: flex;
+      gap: 15px;
+      margin-top: 20px;
+    }
+    
+    .social-links a {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 40px;
+      height: 40px;
+      background: rgba(255,255,255,0.1);
+      color: white;
+      border-radius: 50%;
+      transition: all 0.3s ease;
+    }
+    
+    .social-links a:hover {
+      background: var(--accent);
+      transform: translateY(-3px);
+    }
+    
+    .copyright {
+      text-align: center;
+      padding-top: 30px;
+      border-top: 1px solid rgba(255,255,255,0.1);
+      font-size: 0.9rem;
+      color: #ccc;
+    }
+    
+    /* Chatbot */
+    #chatbot {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      width: 350px;
+      background: #fff;
+      border: 1px solid #ccc;
+      border-radius: 10px;
+      box-shadow: 0 5px 25px rgba(0,0,0,0.2);
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+      font-size: 14px;
+      z-index: 1000;
+      transform: translateY(calc(100% + 20px));
+      transition: transform 0.3s ease;
+    }
+    
+    #chatbot.active {
+      transform: translateY(0);
+    }
+    
+    #chat-header {
+      background: var(--primary);
+      color: #fff;
+      padding: 15px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    
+    #chat-header h3 {
+      margin: 0;
+      font-size: 1.1rem;
+    }
+    
+    #chat-toggle {
+      background: none;
+      border: none;
+      color: white;
+      font-size: 1.2rem;
+      cursor: pointer;
+    }
+    
+    #chat-messages {
+      flex: 1;
+      padding: 15px;
+      overflow-y: auto;
+      height: 300px;
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+    
+    .chat-message {
+      max-width: 80%;
+      padding: 10px 15px;
+      border-radius: 18px;
+      line-height: 1.4;
+    }
+    
+    .chat-message.bot {
+      align-self: flex-start;
+      background: #f1f1f1;
+      border-top-left-radius: 5px;
+    }
+    
+    .chat-message.user {
+      align-self: flex-end;
+      background: var(--primary);
+      color: white;
+      border-top-right-radius: 5px;
+    }
+    
+    #chat-input {
+      display: flex;
+      border-top: 1px solid #eee;
+      padding: 10px;
+    }
+    
+    #chat-input input {
+      flex: 1;
+      padding: 10px 15px;
+      border: 1px solid #ddd;
+      border-radius: 20px;
+      outline: none;
+      font-family: inherit;
+    }
+    
+    #chat-input button {
+      margin-left: 10px;
+      padding: 10px 15px;
+      border: none;
+      background: var(--primary);
+      color: #fff;
+      border-radius: 20px;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+    
+    #chat-input button:hover {
+      background: var(--secondary);
+    }
+    
+    .chatbot-icon {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      width: 60px;
+      height: 60px;
+      background: var(--accent);
+      color: white;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.5rem;
+      cursor: pointer;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+      z-index: 999;
+      transition: transform 0.3s ease;
+    }
+    
+    .chatbot-icon:hover {
+      transform: scale(1.1);
+    }
+    
+    /* Responsive Styles */
+    @media (max-width: 992px) {
+      header h1 {
+        font-size: 2.8rem;
+      }
+      
+      header p {
+        font-size: 1.3rem;
+      }
+      
+      .about-content {
+        flex-direction: column;
+      }
+      
+      .contact-content {
+        flex-direction: column;
+      }
+    }
+    
+    @media (max-width: 768px) {
+      .menu-toggle {
+        display: block;
+      }
+      
+      .nav-links {
+        position: fixed;
+        top: 70px;
+        left: 0;
+        width: 100%;
+        background: var(--primary);
+        flex-direction: column;
+        align-items: center;
+        padding: 20px 0;
+        transform: translateY(-100%);
+        opacity: 0;
+        transition: all 0.3s ease;
+        box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+      }
+      
+      .nav-links.active {
+        transform: translateY(0);
+        opacity: 1;
+      }
+      
+      .nav-links li {
+        margin: 10px 0;
+      }
+      
+      header h1 {
+        font-size: 2.2rem;
+      }
+      
+      header p {
+        font-size: 1.1rem;
+      }
+      
+      section {
+        padding: 60px 0;
+      }
+      
+      #chatbot {
+        width: 90%;
+        right: 5%;
+      }
+    }
+    
+    @media (max-width: 576px) {
+      header {
+        padding: 80px 0;
+      }
+      
+      header h1 {
+        font-size: 1.8rem;
+      }
+      
+      .section-title h2 {
+        font-size: 2rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <div class="container">
+      <h1>Domino Construction</h1>
+      <p>Your One-Stop Renovation & Restoration Partner in Toronto & GTA</p>
+      <a href="#contact" class="btn">Get a Free Quote</a>
+    </div>
+  </header>
+
+  <!-- Navigation -->
+  <nav>
+    <div class="container nav-container">
+      <a href="#" class="logo">Domino<span>Construction</span></a>
+      <button class="menu-toggle" id="menuToggle">
+        <i class="fas fa-bars"></i>
+      </button>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About Us</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#why">Why Choose Us</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- About Section -->
+  <section id="about">
+    <div class="container">
+      <div class="section-title">
+        <h2>About Us</h2>
+        <p>Building Excellence Since 2010</p>
+      </div>
+      <div class="about-content">
+        <div class="about-text">
+          <p>At <strong>Domino Construction</strong>, we bring together specialists from every trade under one roof. From small home repairs to large commercial projects, we handle it all with precision and professionalism.</p>
+          <p>We work with individual clients, corporations, industrial facilities, and serve as a trusted subcontractor on major construction projects throughout Toronto and the Greater Toronto Area.</p>
+          <p>Our commitment to quality, safety, and customer satisfaction has made us a preferred choice for renovation and restoration projects across the region.</p>
+        </div>
+        <div class="about-image">
+          <img src="https://images.unsplash.com/photo-1503387762603-853d5f6c47c9?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="Construction Team">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services Section -->
+  <section id="services" class="services">
+    <div class="container">
+      <div class="section-title">
+        <h2>Our Services</h2>
+        <p>Comprehensive Construction Solutions</p>
+      </div>
+      <div class="services-grid">
+        <div class="service-card">
+          <div class="service-icon">
+            <i class="fas fa-hammer"></i>
+          </div>
+          <div class="service-content">
+            <h3>Demolition</h3>
+            <p>From small projects to large industrial facilities, we handle demolition with precision and safety.</p>
+          </div>
+        </div>
+        <div class="service-card">
+          <div class="service-icon">
+            <i class="fas fa-home"></i>
+          </div>
+          <div class="service-content">
+            <h3>Renovation & Reconstruction</h3>
+            <p>Transform your space with our expert renovation services for residential and commercial properties.</p>
+          </div>
+        </div>
+        <div class="service-card">
+          <div class="service-icon">
+            <i class="fas fa-fire-extinguisher"></i>
+          </div>
+          <div class="service-content">
+            <h3>Restoration</h3>
+            <p>Specialized restoration after fire, water damage, or other disasters to bring your property back to life.</p>
+          </div>
+        </div>
+        <div class="service-card">
+          <div class="service-icon">
+            <i class="fas fa-landmark"></i>
+          </div>
+          <div class="service-content">
+            <h3>Heritage Restoration</h3>
+            <p>Preserving and restoring historic and heritage buildings with attention to original details.</p>
+          </div>
+        </div>
+        <div class="service-card">
+          <div class="service-icon">
+            <i class="fas fa-tools"></i>
+          </div>
+          <div class="service-content">
+            <h3>Repairs & Maintenance</h3>
+            <p>Comprehensive repair and maintenance services including painting, drywall, flooring, and carpentry.</p>
+          </div>
+        </div>
+        <div class="service-card">
+          <div class="service-icon">
+            <i class="fas fa-building"></i>
+          </div>
+          <div class="service-content">
+            <h3>Commercial Services</h3>
+            <p>Expert services for offices, warehouses, retail spaces, and high-rise buildings.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Why Choose Us Section -->
+  <section id="why">
+    <div class="container">
+      <div class="section-title">
+        <h2>Why Choose Us</h2>
+        <p>Excellence in Every Project</p>
+      </div>
+      <div class="features">
+        <div class="feature">
+          <i class="fas fa-shield-alt"></i>
+          <h3>Safety First</h3>
+          <p>We strictly follow Canadian building codes and safety standards to protect our workers and clients.</p>
+        </div>
+        <div class="feature">
+          <i class="fas fa-award"></i>
+          <h3>Quality Assurance</h3>
+          <p>We use premium materials and proven techniques to deliver exceptional results on every project.</p>
+        </div>
+        <div class="feature">
+          <i class="fas fa-users"></i>
+          <h3>Expert Team</h3>
+          <p>Our skilled professionals have years of experience in all aspects of construction and renovation.</p>
+        </div>
+        <div class="feature">
+          <i class="fas fa-clock"></i>
+          <h3>Timely Completion</h3>
+          <p>We respect your time and complete projects within agreed timelines without compromising quality.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Projects Section -->
+  <section id="projects" class="projects">
+    <div class="container">
+      <div class="section-title">
+        <h2>Our Projects</h2>
+        <p>See Our Work in Action</p>
+      </div>
+      <div class="projects-grid">
+        <div class="project-card">
+          <img src="https://images.unsplash.com/photo-1541888946425-d81bb19240f5?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="Kitchen Renovation">
+          <div class="project-overlay">
+            <h3>Kitchen Renovation</h3>
+            <p>Modern kitchen transformation in downtown Toronto</p>
+          </div>
+        </div>
+        <div class="project-card">
+          <img src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="Bathroom Remodel">
+          <div class="project-overlay">
+            <h3>Bathroom Remodel</h3>
+            <p>Luxury bathroom renovation in North York</p>
+          </div>
+        </div>
+        <div class="project-card">
+          <img src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="Office Renovation">
+          <div class="project-overlay">
+            <h3>Office Renovation</h3>
+            <p>Commercial office space transformation in Mississauga</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact">
+    <div class="container">
+      <div class="section-title">
+        <h2>Contact Us</h2>
+        <p>Get in Touch for Your Project</p>
+      </div>
+      <div class="contact-content">
+        <div class="contact-info">
+          <h3>Contact Information</h3>
+          <div class="contact-details">
+            <div class="contact-item">
+              <i class="fas fa-map-marker-alt"></i>
+              <div>
+                <h4>Our Location</h4>
+                <p>Serving Toronto and the Greater Toronto Area</p>
+              </div>
+            </div>
+            <div class="contact-item">
+              <i class="fas fa-envelope"></i>
+              <div>
+                <h4>Email Us</h4>
+                <p>dominoconstruction19@gmail.com</p>
+              </div>
+            </div>
+          </div>
+          <div class="social-links">
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+          </div>
+        </div>
+        <div class="contact-form">
+          <form id="contactForm">
+            <div class="form-group">
+              <label for="name">Your Name</label>
+              <input type="text" id="name" class="form-control" required>
+            </div>
+            <div class="form-group">
+              <label for="email">Your Email</label>
+              <input type="email" id="email" class="form-control" required>
+            </div>
+            <div class="form-group">
+              <label for="subject">Subject</label>
+              <input type="text" id="subject" class="form-control" required>
+            </div>
+            <div class="form-group">
+              <label for="message">Your Message</label>
+              <textarea id="message" class="form-control" required></textarea>
+            </div>
+            <button type="submit" class="btn">Send Message</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-column">
+          <h3>Domino Construction</h3>
+          <p>Your trusted partner for renovation and restoration projects in Toronto and the GTA. We deliver quality, safety, and excellence in every project.</p>
+        </div>
+        <div class="footer-column">
+          <h3>Quick Links</h3>
+          <ul class="footer-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About Us</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#why">Why Choose Us</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-column">
+          <h3>Our Services</h3>
+          <ul class="footer-links">
+            <li><a href="#">Demolition</a></li>
+            <li><a href="#">Renovation</a></li>
+            <li><a href="#">Restoration</a></li>
+            <li><a href="#">Heritage Buildings</a></li>
+            <li><a href="#">Commercial Services</a></li>
+          </ul>
+        </div>
+        <div class="footer-column">
+          <h3>Contact Info</h3>
+          <ul class="footer-links">
+            <li><i class="fas fa-map-marker-alt"></i> Toronto & GTA, ON</li>
+            <li><i class="fas fa-envelope"></i> dominoconstruction19@gmail.com</li>
+          </ul>
+        </div>
+      </div>
+      <div class="copyright">
+        <p>&copy; 2025 Domino Construction. All Rights Reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Chatbot Icon -->
+  <div class="chatbot-icon" id="chatbotIcon">
+    <i class="fas fa-comments"></i>
+  </div>
+
+  <!-- Chatbot -->
+  <div id="chatbot">
+    <div id="chat-header">
+      <h3>Chat with Domino Construction</h3>
+      <button id="chat-toggle"><i class="fas fa-times"></i></button>
+    </div>
+    <div id="chat-messages">
+      <div class="chat-message bot">
+        Hello! I'm here to help answer your questions about Domino Construction. How can I assist you today?
+      </div>
+    </div>
+    <div id="chat-input">
+      <input type="text" id="userInput" placeholder="Type your message here...">
+      <button id="sendMessage"><i class="fas fa-paper-plane"></i></button>
+    </div>
+  </div>
+
+  <script>
+    // Mobile Menu Toggle
+    const menuToggle = document.getElementById('menuToggle');
+    const navLinks = document.getElementById('navLinks');
+    
+    menuToggle.addEventListener('click', () => {
+      navLinks.classList.toggle('active');
+    });
+    
+    // Close menu when clicking on a link
+    document.querySelectorAll('.nav-links a').forEach(link => {
+      link.addEventListener('click', () => {
+        navLinks.classList.remove('active');
+      });
+    });
+    
+    // Chatbot Functionality
+    const chatbot = document.getElementById('chatbot');
+    const chatbotIcon = document.getElementById('chatbotIcon');
+    const chatToggle = document.getElementById('chat-toggle');
+    const sendMessageBtn = document.getElementById('sendMessage');
+    const userInput = document.getElementById('userInput');
+    const chatMessages = document.getElementById('chat-messages');
+    
+    // Toggle chatbot visibility
+    chatbotIcon.addEventListener('click', () => {
+      chatbot.classList.add('active');
+    });
+    
+    chatToggle.addEventListener('click', () => {
+      chatbot.classList.remove('active');
+    });
+    
+    // Send message function
+    function sendMessage() {
+      const text = userInput.value.trim();
+      if (!text) return;
+      
+      addMessage('user', text);
+      let response = getBotResponse(text.toLowerCase());
+      setTimeout(() => {
+        addMessage('bot', response);
+      }, 500);
+      
+      userInput.value = '';
+    }
+    
+    // Send message on button click or Enter key
+    sendMessageBtn.addEventListener('click', sendMessage);
+    userInput.addEventListener('keypress', (e) => {
+      if (e.key === 'Enter') {
+        sendMessage();
+      }
+    });
+    
+    // Add message to chat
+    function addMessage(sender, text) {
+      const msg = document.createElement('div');
+      msg.classList.add('chat-message', sender);
+      msg.innerText = text;
+      chatMessages.appendChild(msg);
+      chatMessages.scrollTop = chatMessages.scrollHeight;
+    }
+    
+    // Bot response logic
+    function getBotResponse(input) {
+      if (input.includes('service') || input.includes('offer') || input.includes('do')) {
+        return "We offer a wide range of services including demolition, renovation, restoration after fire or water damage, heritage building preservation, painting, flooring, carpentry, and commercial construction services.";
+      } 
+      if (input.includes('location') || input.includes('where') || input.includes('area')) {
+        return "We serve all of Toronto and the Greater Toronto Area (GTA), including Mississauga, Brampton, Vaughan, Markham, and surrounding regions.";
+      }
+      if (input.includes('contact') || input.includes('email') || input.includes('phone')) {
+        return "You can reach us at dominoconstruction19@gmail.com. We're available to discuss your project needs.";
+      }
+      if (input.includes('subcontractor') || input.includes('partner')) {
+        return "Yes, we work as a subcontractor with licensed construction companies. We have extensive experience collaborating on large projects.";
+      }
+      if (input.includes('safety') || input.includes('clean') || input.includes('standard')) {
+        return "We strictly follow Canadian building codes and safety standards. Our worksites are always clean, organized, and safe for everyone.";
+      }
+      if (input.includes('fire') || input.includes('water') || input.includes('damage')) {
+        return "We specialize in restoration and renovation after fire and water damage. Our team is trained to handle insurance claims and restore properties to their pre-damage condition.";
+      }
+      if (input.includes('heritage') || input.includes('historic')) {
+        return "We have specific expertise in preserving and restoring historic and heritage buildings, respecting their original architecture while implementing modern safety standards.";
+      }
+      if (input.includes('quote') || input.includes('price') || input.includes('cost')) {
+        return "We provide free, no-obligation quotes for all projects. Please contact us with details about your project, and we'll be happy to provide an estimate.";
+      }
+      if (input.includes('hello') || input.includes('hi') || input.includes('hey')) {
+        return "Hello! Thanks for reaching out to Domino Construction. How can I help you today?";
+      }
+      return "I'm here to help with questions about our construction services. For specific project inquiries or to get a quote, please email us at dominoconstruction19@gmail.com.";
+    }
+    
+    // Contact form submission
+    document.getElementById('contactForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      alert('Thank you for your message! We will get back to you soon.');
+      this.reset();
+    });
+    
+    // Smooth scrolling for navigation links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        
+        const targetId = this.getAttribute('href');
+        if (targetId === '#') return;
+        
+        const targetElement = document.querySelector(targetId);
+        if (targetElement) {
+          window.scrollTo({
+            top: targetElement.offsetTop - 80,
+            behavior: 'smooth'
+          });
+        }
+      });
+    });
+  </script>
+</body>
+</html>
